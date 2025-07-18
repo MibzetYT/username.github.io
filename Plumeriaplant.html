@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumeria (Champa) - The Fragrant Beauty</title>
+    <style>
+        :root {
+            --primary: #8e44ad;
+            --secondary: #f39c12;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #9b59b6);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .img-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .gallery-caption {
+            padding: 1rem;
+            background-color: white;
+        }
+        
+        .feature-card {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .care-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .tip-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .tip-card h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .varieties {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .variety-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .variety-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .variety-content {
+            padding: 1.5rem;
+        }
+        
+        .variety-content h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .fact-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .fact-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .img-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Plumeria (Champa) - The Fragrant Beauty</h1>
+            <p class="subtitle">Discover the tropical splendor and cultural significance of this exquisite flowering plant</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Plumeria Facts</div>
+            <div class="nav-links">
+                <a href="#overview">Overview</a>
+                <a href="#features">Features</a>
+                <a href="#care">Care Guide</a>
+                <a href="#varieties">Varieties</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#cultural">Cultural Significance</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <section id="overview">
+            <h2>Introduction to Plumeria</h2>
+            <p>Plumeria, commonly known as Frangipani or Champa in Hindi, is a genus of flowering plants native to tropical regions including Central America, Mexico, the Caribbean, and South America. These plants are renowned for their beautiful, fragrant flowers that bloom in clusters at the branch tips.</p>
+            
+            <div class="feature-card">
+                <img src="https://placehold.co/1200x600?text=Mature+Plumeria+Tree+with+Abundant+Flowers" alt="Mature Plumeria tree with abundant flowers in tropical garden setting" />
+                <div class="card-content">
+                    <h3>A Tropical Treasure</h3>
+                    <p>Plumeria plants are small trees that typically grow 6-30 feet tall with a rounded, spreading crown. The waxy, fragrant flowers are most fragrant at night to attract their pollinators - the sphinx moths. Each flower consists of five petals that may be white, yellow, pink, red, or multicolored.</p>
+                    <p>The plants contain white latex sap that can be irritating to skin and eyes. In Hindi, Plumeria is known as Champa (चम्पा) and holds significant cultural and religious importance in India.</p>
+                </div>
+            </div>
+            
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <h4>Scientific Name</h4>
+                    <p>Plumeria spp.</p>
+                </div>
+                <div class="fact-card">
+                    <h4>Family</h4>
+                    <p>Apocynaceae</p>
+                </div>
+                <div class="fact-card">
+                    <h4>Native Range</h4>
+                    <p>Neotropics</p>
+                </div>
+                <div class="fact-card">
+                    <h4>Common Names</h4>
+                    <p>Frangipani, Champa, Temple Tree</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="features">
+            <h2>Distinctive Features</h2>
+            <p>Plumeria plants have several unique characteristics that make them stand out among tropical flora:</p>
+            
+            <div class="care-tips">
+                <div class="tip-card">
+                    <h4>Leaf Structure</h4>
+                    <p>The leaves are large (8-12 inches long), leathery, and arranged spirally at the ends of branches. They are deciduous in climates with a dry season.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Flower Characteristics</h4>
+                    <p>Flowers have five petals fused at the base to form a funnel shape. They come in many colors and combinations, often with yellow centers.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Fragrance</h4>
+                    <p>The scent is strongest at night and varies among species from sweet to spicy or citrusy. Some cultivars produce no fragrance.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Growth Habit</h4>
+                    <p>Forms a small tree with a vase-shaped, rounded, or umbrella-like canopy. Branches are thick and succulent.</p>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 2rem;">Plant Anatomy</h3>
+            <div class="feature-card" style="margin-top: 1.5rem;">
+                <img src="https://placehold.co/1200x600?text=Plumeria+Plant+Anatomy+Diagram" alt="Detailed diagram showing Plumeria plant anatomy including leaves, flowers, and branches" />
+                <div class="card-content">
+                    <p>The thick, fleshy branches contain a milky latex sap. Leaves are oblong or lance-shaped with prominent veins. Flowers emerge from terminal flower stalks (inflorescence) that produce multiple blossoms sequentially.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="care">
+            <h2>Growing Guide</h2>
+            <p>Plumeria thrives in warm climates but can be grown in containers in cooler regions. Here's how to care for your Champa plant:</p>
+            
+            <div class="care-tips">
+                <div class="tip-card">
+                    <h4>Sunlight</h4>
+                    <p>Full sun (6-8 hours daily) is essential for good flowering. Plants will grow in partial shade but bloom less.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Soil</h4>
+                    <p>Well-draining soil mix is crucial. Use a sandy loam or cactus mix with perlite for container plants.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Watering</h4>
+                    <p>Water deeply but infrequently, allowing soil to dry between waterings. Reduce watering in winter when dormant.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Temperature</h4>
+                    <p>Ideal range is 65-90°F (18-32°C). Protect from temperatures below 40°F (4°C).</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Fertilizer</h4>
+                    <p>Use a high-phosphorus fertilizer (10-30-10) during growing season to promote blooming.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Pruning</h4>
+                    <p>Prune in early spring to shape plant and encourage branching where more flowers will form.</p>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 2rem;">Propagation Methods</h3>
+            <div class="care-tips">
+                <div class="tip-card">
+                    <h4>Stem Cuttings</h4>
+                    <p>Most common method. Take 12-18" cuttings from mature branches in spring/summer. Let cuttings dry for 1-2 weeks before planting in well-draining mix.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Seeds</h4>
+                    <p>Plants grown from seed may take 3+ years to flower and won't be true to parent plant. Fun for experimentation.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Grafting</h4>
+                    <p>Used to propagate named cultivars. Allows multiple varieties on one plant.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="varieties">
+            <h2>Popular Varieties</h2>
+            <p>There are numerous Plumeria species and cultivars. Here are some of the most beautiful and popular ones:</p>
+            
+            <div class="varieties">
+                <div class="variety-card">
+                    <img src="https://placehold.co/600x400?text=Plumeria+rubra" alt="Plumeria rubra with deep red flowers and yellow centers" />
+                    <div class="variety-content">
+                        <h4>Plumeria rubra</h4>
+                        <p>The most common species with flowers ranging from white to yellow, pink, and deep red. Many cultivars originate from this species.</p>
+                    </div>
+                </div>
+                <div class="variety-card">
+                    <img src="https://placehold.co/600x400?text=Plumeria+alba" alt="Plumeria alba with pure white flowers and yellow centers" />
+                    <div class="variety-content">
+                        <h4>Plumeria alba</h4>
+                        <p>Native to Puerto Rico, bearing white flowers with yellow centers. Narrower leaves than other species.</p>
+                    </div>
+                </div>
+                <div class="variety-card">
+                    <img src="https://placehold.co/600x400?text=Plumeria+obtusa" alt="Plumeria obtusa with rounded white flowers" />
+                    <div class="variety-content">
+                        <h4>Plumeria obtusa</h4>
+                        <p>Evergreen species with rounded white flowers and glossy, dark green leaves. More cold-sensitive than others.</p>
+                    </div>
+                </div>
+                <div class="variety-card">
+                    <img src="https://placehold.co/600x400?text=Plumeria+Singapore" alt="Singapore Plumeria with pink and white flowers" />
+                    <div class="variety-content">
+                        <h4>Singapore Plumeria</h4>
+                        <p>Most common white variety with overlapping petals and intense fragrance. Blooms prolifically.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="gallery">
+            <h2>Plumeria Gallery</h2>
+            <p>Enjoy these stunning images showcasing the beauty and diversity of Plumeria flowers:</p>
+            
+            <div class="img-gallery">
+                <div class="gallery-item">
+                    <img src="https://placehold.co/600x400?text=Pink+Plumeria+Bloom" alt="Close-up of a vibrant pink Plumeria flower with velvety petals" />
+                    <div class="gallery-caption">
+                        <p>Vibrant pink blooms with overlapping petals</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/600x400?text=Yellow+Plumeria" alt="Sunny yellow Plumeria flower with delicate veining" />
+                    <div class="gallery-caption">
+                        <p>Sunny yellow variety glowing in sunlight</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/600x400?text=Red+Plumeria" alt="Deep red Plumeria flower with orange gradient towards center" />
+                    <div class="gallery-caption">
+                        <p>Striking red flowers with golden centers</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/600x400?text=Multi-colored+Plumeria" alt="Rainbow-colored Plumeria with pink, yellow, and white blended petals" />
+                    <div class="gallery-caption">
+                        <p>Multi-colored cultivar showing stunning gradients</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/600x400?text=Plumeria+Branch" alt="Branch of Plumeria tree with multiple flowers in various stages of bloom" />
+                    <div class="gallery-caption">
+                        <p>Branch displaying sequential flowering pattern</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/600x400?text=Plumeria+Garden" alt="Tropical garden filled with flowering Plumeria trees" />
+                    <div class="gallery-caption">
+                        <p>Tropical garden showcasing mature Plumeria specimens</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="cultural">
+            <h2>Cultural Significance</h2>
+            <p>Plumeria holds deep cultural and spiritual meaning in many societies, particularly in India where it's known as Champa:</p>
+            
+            <div class="feature-card">
+                <img src="https://placehold.co/1200x600?text=Cultural+Uses+of+Plumeria" alt="Traditional ceremony with Plumeria flowers used as offerings" />
+                <div class="card-content">
+                    <h3>Sacred Flower of India</h3>
+                    <p>In Hindu culture, Champa flowers are sacred to both Lord Vishnu and Lord Krishna. The flowers are used in religious ceremonies, temple offerings, and wedding garlands. Their sweet fragrance and pristine beauty symbolize devotion and purity.</p>
+                    <p>The flowers are traditionally used to make perfumes (itr) and hair ornaments (gajras) in India. In Ayurveda, some Plumeria species are used for medicinal purposes, though the milky sap is considered toxic.</p>
+                </div>
+            </div>
+            
+            <div class="care-tips">
+                <div class="tip-card">
+                    <h4>Hawaiian Culture</h4>
+                    <p>In Hawaii, Plumeria flowers are used to make leis (garlands). Different colors convey different meanings - white for positivity, pink for romance, etc.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Buddhist Symbolism</h4>
+                    <p>In Buddhist tradition, the flowers represent immortality because they continue to produce leaves and flowers even after being uprooted.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>Modern Uses</h4>
+                    <p>Today, Plumeria essential oil is used in aromatherapy and perfumery. The scent is said to have calming properties that soothe stress and anxiety.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <h3>Plumeria: Nature's Fragrant Masterpiece</h3>
+            <p>Explore the beauty and significance of these tropical flowers that have captivated cultures across the world.</p>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Care Guide</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+            </div>
+            <p>&copy; 2023 Plumeria Enthusiasts. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
